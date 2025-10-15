@@ -48,6 +48,16 @@
             bindings = <&mkp MB5>;
             key-positions = <31 32>;
         };
+
+        mc {
+            bindings = <&mkp MCLK>;
+            key-positions = <18 20>;
+        };
+
+        tab {
+            bindings = <&kp TAB>;
+            key-positions = <13 12>;
+        };
     };
 
     macros {
@@ -76,12 +86,12 @@
         default_layer {
             bindings = <
 &kp Q      &kp W         &kp E         &kp R                  &kp T                                                       &kp Y            &kp U  &kp I      &kp O    &kp P
-&kp A      &kp S         &kp D         &kp F                  &kp G            &kp SPACE                   &kp BACKSLASH  &kp H            &kp J  &kp K      &kp L    &kp SEMICOLON
+&kp A      &kp S         &kp D         &kp F                  &kp G            &kp ESC                     &kp BACKSLASH  &kp H            &kp J  &kp K      &kp L    &kp SEMICOLON
 &kp Z      &kp X         &kp C         &kp V                  &kp B            &lt_to_layer_0 6 TAB        &kp SQT        &kp N            &kp M  &kp COMMA  &kp DOT  &kp SLASH
 &kp LCTRL  &kp LEFT_WIN  &kp LEFT_ALT  &lt_to_layer_0 2 LEFT  &mt LSHFT SPACE  &lt_to_layer_0 5 RIGHT      &kp BACKSPACE  &mt RCTRL ENTER                             &mt RSHFT LC(SPACE)
             >;
 
-            sensor-bindings = <&inc_dec_kp UP DOWN>;
+            sensor-bindings = <&inc_dec_kp DOWN UP>;
         };
 
         NO_USE1 {
@@ -126,22 +136,24 @@
 
         FUNCTION {
             bindings = <
-&kp F1  &kp F2    &kp F3     &kp F4   &kp F5                          &kp F6  &kp F7    &kp F8    &kp F9     &kp F10
-&trans  &trans    &kp PG_UP  &trans   &trans  &trans          &trans  &trans  &trans    &kp UP    &trans     &kp F11
-&trans  &kp HOME  &kp PG_DN  &kp END  &trans  &kp ESCAPE      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp F12
-&trans  &trans    &trans     &trans   &trans  &trans          &trans  &trans                                 &trans
+&kp F1  &kp F2    &kp F3     &kp F4   &kp F5                      &kp F6  &kp F7    &kp F8    &kp F9     &kp F10
+&trans  &trans    &kp PG_UP  &trans   &trans  &trans      &trans  &trans  &trans    &kp UP    &trans     &kp F11
+&trans  &kp HOME  &kp PG_DN  &kp END  &trans  &trans      &trans  &trans  &kp LEFT  &kp DOWN  &kp RIGHT  &kp F12
+&trans  &trans    &trans     &trans   &trans  &trans      &trans  &trans                                 &trans
             >;
 
-            sensor-bindings = <&inc_dec_kp PG_UP PG_DN>;
+            sensor-bindings = <&inc_dec_kp PG_DN PG_UP>;
         };
 
         HARDWARE {
             bindings = <
-&trans          &trans  &trans      &trans  &trans                                      &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&bt BT_CLR_ALL  &trans  &trans      &trans  &trans       &trans      &kp C_VOLUME_UP    &trans        &trans        &trans        &trans        &trans
-&trans          &trans  &bt BT_CLR  &trans  &bootloader  &trans      &kp C_VOLUME_DOWN  &trans        &kp C_MUTE    &trans        &trans        &trans
-&trans          &trans  &trans      &trans  &trans       &trans      &trans             &trans                                                  &trans
+&trans          &trans  &trans      &trans  &trans                               &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&bt BT_CLR_ALL  &trans  &trans      &trans  &trans       &kp C_MUTE      &trans  &trans        &trans        &trans        &trans        &trans
+&trans          &trans  &bt BT_CLR  &trans  &bootloader  &trans          &trans  &trans        &trans        &trans        &trans        &trans
+&trans          &trans  &trans      &trans  &trans       &trans          &trans  &trans                                                  &trans
             >;
+
+            sensor-bindings = <&inc_dec_kp C_VOLUME_DOWN C_VOLUME_UP>;
         };
     };
 };
