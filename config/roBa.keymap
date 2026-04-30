@@ -58,6 +58,31 @@
             bindings = <&kp TAB>;
             key-positions = <13 12>;
         };
+
+        lang {
+            bindings = <&kp LC(SPACE)>;
+            key-positions = <17 18>;
+        };
+
+        up {
+            bindings = <&kp UP_ARROW>;
+            key-positions = <2 3>;
+        };
+
+        right {
+            bindings = <&kp RIGHT>;
+            key-positions = <13 14>;
+        };
+
+        left {
+            bindings = <&kp LEFT>;
+            key-positions = <11 12>;
+        };
+
+        down {
+            bindings = <&kp DOWN>;
+            key-positions = <25 24>;
+        };
     };
 
     macros {
